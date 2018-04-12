@@ -1,0 +1,427 @@
+
+******************************************************************************************************************************
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++ |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +   V  E  R  S  I  O  N :   0.14.0     + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++	|||||||||||||||||||||||||||||||||||||||| *  
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+******************************************************************************************************************************
+*                                                                                                                            *
+*                                                                                                                            *
+*  ----------------------------------------------- M A J O R   C H A N G E S ----------------------------------------------- * 
+*  |																					   						           | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------- F U N C T I O N A L I T Y / N E W   F E A T U R E S ---------------------------------- *
+*  | 02/16/12: Water mist effect added for when Bomb enters water, 											       		   | *
+*  |			varies based on his speed entering the water                                                               | *
+*  | 02/16/12: Bombs now create a small splash when they enter water                                                       | *
+*  | 02/20/12: Added version number to title screen                                                                        | *
+*  | 02/20/12: Added the window toolbox to the game window, can now move the window around                                 | *
+*  | 02/20/12: Game no longer freezes when it loses focus                                                                  | *
+*  | 02/21/12: Removed button control and the icon from the window taskbar                                                 | *
+*  | 02/21/12: Removed lives from the window caption bar                                                                   | *
+*  | 02/21/12: Removed the room caption from the window caption bar                                                        | *
+*  | 02/21/12: Window caption bar now displays 'Bomb Quest' for all rooms                                                  | *
+*  | 02/21/12: Bomb's sprites excluding death animation were redone and updated                                			   | *
+*  | 02/21/12: Title Screen logo image was changed to reflect the new Bomb image change                                    | *
+*  | 02/21/12: Bomb now blinks occasionally while facing forward						                                   | *
+*  | 02/21/12: In-game errors are now written to game_errors.log														   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------------------------- B U G F I X E S ---------------------------------------------------- *                    
+*  | 02/16/12: Fixed bug causing Water Bomb's to constantly splash while under water                                 	   | *
+*  | 02/20/12: Game no longer checks for < 1 lives if at TitleScreen or Options rooms                                      | *
+*  | 02/21/12: Figured out fix to bug with DLLs (disable antivirus) and updated game_info accordingly                      | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+******************************************************************************************************************************
+*============================================================================================================================*
+*============================================================================================================================*
+*============================================================================================================================*
+******************************************************************************************************************************
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++ |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +   V  E  R  S  I  O  N :   0.15.0     + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++	|||||||||||||||||||||||||||||||||||||||| *  
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+******************************************************************************************************************************
+*                                                                                                                            *
+*                                                                                                                            *
+*  ----------------------------------------------- M A J O R   C H A N G E S ----------------------------------------------- * 
+*  |																					   						           | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------- F U N C T I O N A L I T Y / N E W   F E A T U R E S ---------------------------------- *
+*  | 02/21/12: When Boss of Chapter 2 dies, the bottom spikes are destroyed (to prevent dying after                        | *
+*  |			you kill him while waiting for the screen to change)													   | *
+*  | 02/21/12: New Chapter 2 Boss crate sprite													                           | *
+*  | 02/21/12: New Bomb death animation sprite													                           | *
+*  | 02/21/12: Reduced Bomb death animation sprite's animation speed by half						                       | *
+*  | 02/21/12: Slightly lightened the sprite of the crates explosion effect pieces				                           | *
+*  | 02/22/12: Chapter 3's song has been added to the game										                           | *
+*  | 02/23/12: Sound for collecting an extra life was changed									                           | *
+*  | 02/23/12: Extra life collection animation removed											                           | *
+*  | 02/23/12: Changed many room transition effects												                           | *
+*  | 02/24/12: The version of the game is now displayed on the window bar						                           | *
+*  | 02/24/12: Removed ultracrypt dll dependency, the game is now DLL free!						                           | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------------------------- B U G F I X E S ---------------------------------------------------- *                    
+*  | 02/21/12: Fixed description to correctly display 'Bomb Quest'								                           | *
+*  | 02/23/12: Fixed a bug that caused rooms to transition strangely								                       | *
+*  | 02/23/12: Fixed a bug that caused a Standard Bomb to be thrown while selecting the Beginning stage from Level Select  | *
+*  | 02/23/12: Fixed a bug that caused bomb to start at a weird position in Chapter 2-6									   | *
+*  | 02/23/12: Fixed a bug that prevented Chapter 3 music from playing													   | *
+*  | 02/23/12: Fixed a bug that prevented the spikes from being destroyed when Chapter 2 Boss is killed					   | *
+*  | 02/24/12: Centered the death effects of the Chapter 1 and Chapter 2 Bosses											   | *
+*  | 02/24/12: Changed the position of the helpblock in Chapter 2-2 to prevent unintended methods of advancing			   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+******************************************************************************************************************************
+*============================================================================================================================*
+*============================================================================================================================*
+*============================================================================================================================*
+******************************************************************************************************************************
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++ |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +   V  E  R  S  I  O  N :   0.16.0     + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++	|||||||||||||||||||||||||||||||||||||||| *  
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+******************************************************************************************************************************
+*                                                                                                                            *
+*                                                                                                                            *
+*  ----------------------------------------------- M A J O R   C H A N G E S ----------------------------------------------- * 
+*  | 03/24/12: Chapter 1 was made much easier																   			   | *
+*  | 03/26/12: Chapter 3 Boss fight completed																   			   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------- F U N C T I O N A L I T Y / N E W   F E A T U R E S ---------------------------------- *
+*  | 02/24/12: Removed 5 of the Coin Blocks at the start of Chapter 1-4													   | *
+*  | 02/24/12: Added 2 Coin Blocks to the start of Chapter 1-6													   		   | *
+*  | 02/24/12: Made Chapter 1-1 a little easier																	   		   | *
+*  | 			- Extended the level boundary so it's harder for the player to die by going outside of the level  		   | *
+*  | 			- Extended some of the ground platforms so they are easier to land on							  		   | *
+*  | 02/24/12: Made Chapter 1-7 a little easier																	   		   | *
+*  | 			- Removed the cannon from behind the bush at the end of the level								   		   | *
+*  | 02/24/12: Made Chapter 1-8 a little easier																	   		   | *
+*  | 			- Removed the spikes from around the level exit that were hidden under the enabled black blocks   		   | *
+*  | 02/24/12: Made Chapter 1-9 a lot easier																		   	   | *
+*  | 			- Removed three cannons from the beginning of the level											   		   | *
+*  | 			- Removed many of the blocks with spikes on them that were behind the breakable blocks			   		   | *
+*  | 			- Removed the spikes that were on the enabled black blocks at the end of the level				   		   | *
+*  | 			- Added one spike to one of the enabled black blocks that must be jumped on for the extra life	   		   | *
+*  | 02/24/12: Made Chapter 1 Boss final phase a little easier													   		   | *
+*  | 			- His projectiles no longer change speed														   		   | *
+*  | 			- Now fires projectiles slightly less frequently												   		   | *
+*  | 			- Removed one layer of black breakable blocks from the level									   		   | *
+*  | 			- The Grouchhogs spawned from his projectiles now launch into the air when created				   		   | *
+*  | 02/24/12: The mechanic for collisions with Winged Grouchhogs was changed; they are now more 'solid'				   | *
+*  | 02/24/12: A new sound was added for the Standard Bomb's secondary ability											   | *
+*  | 02/29/12: Game ending music was created and added to the game												   		   | *
+*  | 03/01/12: Most of Chapter 3's tile sprites were re-colored													   		   | *
+*  | 03/01/12: An error sound is now played when a player tries using an ability without sufficient BP, 				   | *
+*  |			or tries using an ability they have yet to acquire   													   | *
+*  | 03/01/12: The player death sound has been changed															   		   | *
+*  | 03/01/12: The game over sound has been changed																   		   | *
+*  | 03/01/12: A sound for completing a level has been added to the game											   	   | *
+*  | 03/01/12: The Chapter 1 Boss now plays a sound when his projectiles are fired								   		   | *
+*  | 03/01/12: Made the ability error sound also play if the Standard Bomb secondary is attempted while in water	   	   | *
+*  | 03/01/12: Slightly lowered the volume of the block breaking sound											   		   | *
+*  | 03/01/12: Now takes less time to transition from killing a boss to going to Level Select					   		   | *
+*  | 03/09/12: A non-interactive door was placed at the beginning of every level									   	   | *
+*  | 03/09/12: Gravity Lift object added to the game for Chapter 3 Boss											   		   | *
+*  | 03/10/12: Trail effect added to Chapter 1 Boss projectiles													   		   | *
+*  | 03/10/12: Made most particle trail effects more efficient													   		   | *
+*  | 03/10/12: Bomb smoke now is disabled while in a Chapter 3 Boss gravity lift so that the bombs are easier to see	   | *
+*  | 03/15/12: Chapter 4 Boss music was added to the game																   | *
+*  | 03/15/12: Chapter 4 levels music was changed																		   | *
+*  | 03/15/12: Title music was changed																		   			   | *
+*  | 03/17/12: Credits music was updated																		   		   | *
+*  | 03/17/12: Chapter 1 levels music was changed															   			   | *
+*  | 03/17/12: Chapter 1 Boss music was changed																   			   | *
+*  | 03/17/12: Chapter 2 Boss music was updated																   			   | *
+*  | 03/17/12: Chapter 2 levels music was updated															   			   | *
+*  | 03/17/12: Chapter 3 levels music was updated															   			   | *
+*  | 03/17/12: Chapter 3 Boss music was updated																   			   | *
+*  | 03/17/12: Chapter 4 levels music was updated															   			   | *
+*  | 03/26/12: Spinders had their projectile's damage decreased from 20 to 15	   			   							   | *
+*  | 03/26/12: Astrobros had their damage reduced to 8 (down from 10)											   		   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------------------------- B U G F I X E S ---------------------------------------------------- *                    
+*  | 02/24/12: Fixed a bug that prevented players from entering Chapter 4-1 from the Level Select Menu					   | *
+*  | 02/24/12: Fixed a bug that were causing bombs to created from incorrect origins of the player						   | *
+*  | 02/24/12: Fixed a bug that made it possible to kill the boss and not be rewarded									   | *
+*  | 02/24/12: Fixed a bug that was causing thrown bombs to stop in mid-air												   | *
+*  | 02/24/12: Fixed a bug that caused the bomb power bar to be off center												   | *
+*  | 03/01/12: Fixed a bug that caused the level complete sound to be cut short from the room transition				   | *
+*  | 03/01/12: Fixed a bug that caused Grouchhogs to teleport underground							 					   | *
+*  | 03/01/12: Fixed a bug that caused two songs to play after a game over							 					   | *
+*  | 03/04/12: Fixed a bug that caused the SuperSound extension to not be unloaded before restarting the game			   | *
+*  | 03/04/12: The new Standard Bomb secondary ability sound now correctly plays when a player uses the space bar		   | * 
+*  |			or middle click	to activate it																			   | *
+*  | 03/09/12: Water Bombs no longer emit smoke after touching water													   | * 
+*  | 03/09/12: Fixed a bug causing Water Bombs to continuously splash													   | * 
+*  | 03/09/12: Chapter 3 background stars are now translucent															   | * 
+*  | 03/09/12: Chapter 3 meteors depth was changed so they don't awkwardly appear behind some objects					   | * 
+*  | 03/09/12: Fixed a bug causing sounds to loop after death															   | * 
+*  | 03/10/12: Previous sounds now correctly stop when a player goes to the Level Select screen							   | * 
+*  | 03/26/12: Electric Bomb Secondary ability lightning bolts are now created at the correct position					   | * 
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+******************************************************************************************************************************
+*============================================================================================================================*
+*============================================================================================================================*
+*============================================================================================================================*
+******************************************************************************************************************************
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++ |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +   V  E  R  S  I  O  N :   0.17.0     + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++	|||||||||||||||||||||||||||||||||||||||| *  
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+******************************************************************************************************************************
+*                                                                                                                            *
+*                                                                                                                            *
+*  ----------------------------------------------- M A J O R   C H A N G E S ----------------------------------------------- * 
+*  | 03/29/12: Chapter 2 is complete and ready for beta testing															   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------- F U N C T I O N A L I T Y / N E W   F E A T U R E S ---------------------------------- *
+*  | 03/27/12: Chapter 3 Boss graphic updated															   			   	   | *
+*  | 03/27/12: Chapter 3 Boss' Single-File Chaos projectiles image was updated							   			   	   | *
+*  | 03/27/12: Bomb Cannons' shooting sound volume has been lowered slightly								   			   | *
+*  | 03/27/12: Once again shortened the time to transition from killing a boss to going to Level Select		   		   	   | *
+*  | 03/27/12: Made Chapter 2-7 harder																		   			   | *
+*  | 03/27/12: Made Chapter 2-8 easier																		   			   | *
+*  | 03/27/12: Made Chapter 2-9 easier																		   			   | *
+*  | 03/27/12: Enemies Guntraption & Guntraption 2.0 had their damage decreased from 10 per projectile to 2 per projectile | *
+*  | 03/27/12: Chapter 4 Boss music was added to the game																   | *
+*  | 03/29/12: Water spouts from Blue ! Switches now always launch objects, not just at first activation but doing the     | *
+*  |			duration as well	   																					   | *
+*  | 03/29/12: Fixed collision masks on the level entry doors in Chapter 1 and 2										   | *
+*  | 03/29/12: Guntraption 2.0 projectiles now correctly seek Bomb's origin												   | *
+*  | 03/29/12: ! Switches are universal with each other rather than working individually								   | *
+*  | 03/29/12: Chapter 2-5 was added to the game																		   | *
+*  | 03/29/12: Chapter 2-4 was added to the game																		   | *
+*  | 03/29/12: Blue ! blocks no longer play the ticker sound when activated	   											   | *
+*  | 03/29/12: Blue ! blocks and the water spouts they activate last 14 times shorter									   | *
+*  | 03/29/12: Lowered the volume of Water Bomb mini water splashes														   | *
+*  | 03/29/12: Standard Brick sprite was updated																		   | *
+*  | 03/29/12: Coin Block sprite was updated																			   | *
+*  | 03/29/12: Coin Block's now drop 6 coins (down from 10)															   	   | *
+*  | 03/29/12: Removed 2 Bomb Cannons from Chapter 1-4																	   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------------------------- B U G F I X E S ---------------------------------------------------- *                    
+*  | 03/27/12: Fixed a bug causing the Blue ! Switch water spout to be less powerful than intended			   			   | *
+*  | 03/27/12: Fixed a bug that disabled Chapter 4 music													   			   | *
+*  | 03/27/12: Corrected some of the tiles in Chapter 1-9													   			   | *
+*  | 03/27/12: Fixed bug causing Chapter 3 Boss music to be played in Chapter 2 Boss level					   			   | *
+*  | 03/29/12: Fixed bug causing Chapter 3 Boss Single-File Chaos projectiles to sometimes get stuck		   			   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+******************************************************************************************************************************
+*============================================================================================================================*
+*============================================================================================================================*
+*============================================================================================================================*
+******************************************************************************************************************************
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++ |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +   V  E  R  S  I  O  N :   0.18.0     + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++	|||||||||||||||||||||||||||||||||||||||| *  
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+******************************************************************************************************************************
+*                                                                                                                            *
+*                                                                                                                            *
+*  ----------------------------------------------- M A J O R   C H A N G E S ----------------------------------------------- * 
+*  | 04/08/12: Chapter 3 is complete and ready for beta testing															   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------- F U N C T I O N A L I T Y / N E W   F E A T U R E S ---------------------------------- *
+*  | 03/29/12: Slightly changed Chapter 2-5																	   			   | *
+*  | 03/29/12: Added some Coin Blocks to Chapter 2-6														   			   | *
+*  | 03/29/12: Added some Coin Blocks to Chapter 2-8														   			   | *
+*  | 03/29/12: Made Chapter 2-8 slightly easier																   			   | *
+*  | 03/29/12: Players can no longer make Bomb go 23723 mph in a gravity lift on Chapter 3 Boss				   			   | *
+*  | 04/07/12: Thrown bombs no longer kill Astrobros by simply bouncing off of them							   			   | *
+*  | 04/08/12: Meteor showers in Chapter 3 now occur every 40 seconds (up from 25 seconds)					   			   | *
+*  | 04/08/12: The meteors from the Chapter 3 meteor showers now make a sound when they crash into the ground  			   | *
+*  | 04/08/12: The asteroid platforms in Chapter 3 now have a flat sprite mask making them easier to jump off of		   | *
+*  | 04/08/12: Slightly increased the volume of the ability error sound													   | *
+*  | 04/08/12: Coins are now affected by water spouts																	   | *
+*  | 04/08/12: Chapter 3-1 was added to the game																		   | *
+*  | 04/08/12: Chapter 3-2 was added to the game																		   | *
+*  | 04/08/12: Chapter 3-3 was added to the game																		   | *
+*  | 04/08/12: Chapter 3-4 was added to the game																		   | *
+*  | 04/08/12: Chapter 3-5 was added to the game																		   | *
+*  | 04/08/12: Chapter 3-6 was added to the game																		   | *
+*  | 04/08/12: Chapter 3-7 was added to the game																		   | *
+*  | 04/08/12: Chapter 3-8 was added to the game																		   | *
+*  | 04/08/12: Chapter 3-9 was added to the game																		   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------------------------- B U G F I X E S ---------------------------------------------------- *                    
+*  | 03/29/12: Fixed a bug that caused the ticker sound to play too loud if multiple switches were activated   			   | *
+*  | 04/08/12: Fixed a bug causing the ticker sound to continue to play even after completing a level		   			   | *
+*  | 04/08/12: Fixed a bug that caused Chapter 3 music to play when fighting the Chapter 3 Boss				   			   | *
+*  | 04/08/12: Fixed a bug that caused the Chapter 3 meteor shower sounds to loop indefinitely				   			   | *
+*  | 04/08/12: Coins now correctly have collisions with all player abilities								   			   | *
+*  | 04/08/12: Fixed a bug causing Yellow ! Blocks to work independantly rather than universally			   			   | *
+*  | 04/08/12: Fixed a bug causing Blue ! Blocks to act strangely when activated by the Water Bomb's water ball projectiles| *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+******************************************************************************************************************************
+******************************************************************************************************************************
+*============================================================================================================================*
+*============================================================================================================================*
+*============================================================================================================================*
+******************************************************************************************************************************
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++ |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +   V  E  R  S  I  O  N :   0.18.1     + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++	|||||||||||||||||||||||||||||||||||||||| *  
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+******************************************************************************************************************************
+*                                                                                                                            *
+*                                                                                                                            *
+*  ----------------------------------------------- M A J O R   C H A N G E S ----------------------------------------------- * 
+*  |																					   						           | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------- F U N C T I O N A L I T Y / N E W   F E A T U R E S ---------------------------------- *
+*  | 04/08/12: Slightly shortened the ceiling scaling distance in Chapter 3-9											   | *
+*  | 04/08/12: Chapter 3 Boss' Moonbounce projectiles now bounce off of each other										   | *
+*  | 04/08/12: Updated Chapter 1 Boss' death effect																		   | *
+*  | 04/08/12: Updated Chapter 2 Boss' death effect																		   | *
+*  | 04/08/12: Updated Chapter 3 Boss' death effect																		   | *
+*  | 04/08/12: Increased the time to transition from killing a boss to going to Level Select				   		   	   | *
+*  | 04/08/12: When Chapter 1 Boss is killed, his projectiles are destroyed									   		   	   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------------------------- B U G F I X E S ---------------------------------------------------- *                    
+*  | 04/08/12: Moved the Boss sign from the Chapter 3-8 exit to the Chapter 3-9 exit									   | *
+*  | 04/08/12: Fixed a bug causing attributes to be lowered when replaying old bosses									   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+******************************************************************************************************************************
+*============================================================================================================================*
+*============================================================================================================================*
+*============================================================================================================================*
+******************************************************************************************************************************
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++ |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +   V  E  R  S  I  O  N :   0.18.2     + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++	|||||||||||||||||||||||||||||||||||||||| *  
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+******************************************************************************************************************************
+*                                                                                                                            *
+*                                                                                                                            *
+*  ----------------------------------------------- M A J O R   C H A N G E S ----------------------------------------------- * 
+*  |																					   						           | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------- F U N C T I O N A L I T Y / N E W   F E A T U R E S ---------------------------------- *
+*  | 04/08/12: Astrobros had their damage reduced to 6 (down from 8)										   		   	   | *
+*  | 04/08/12: Added some Coin Blocks to Chapter 2-2														   		   	   | *
+*  | 04/08/12: Added some Coin Blocks to Chapter 2-6														   		   	   | *
+*  | 04/08/12: Made Chapter 2-2 slightly easier																   		   	   | *
+*  | 04/08/12: Made Chapter 2-8 much easier																   		   	   	   | *
+*  | 04/08/12: Made Chapter 1-9 slightly easier, again														   		   	   | *
+*  | 04/08/12: Added window tool buttons																	   		   	   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------------------------- B U G F I X E S ---------------------------------------------------- *                    
+*  | 04/08/12: Changed the tiles of the exit door in Chapter 2-3											   		   	   | *
+*  | 04/08/12: Removed some extra water in Chapter 2-6														   		   	   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+******************************************************************************************************************************
+*============================================================================================================================*
+*============================================================================================================================*
+*============================================================================================================================*
+******************************************************************************************************************************
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++ |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +   V  E  R  S  I  O  N :   0.19.0     + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++	|||||||||||||||||||||||||||||||||||||||| *  
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+******************************************************************************************************************************
+*                                                                                                                            *
+*                                                                                                                            *
+*  ----------------------------------------------- M A J O R   C H A N G E S ----------------------------------------------- * 
+*  | 04/09/12: Fire Bomb secondary ability was added to the game											   		   	   | *
+*  |			- 16 BP to use																				   		   	   | *
+*  |			- Sticks to objects																			   		   	   | *
+*  |			- Burns off Winged Grouchhogs' wings, turning them into regular Grouchhogs								   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------- F U N C T I O N A L I T Y / N E W   F E A T U R E S ---------------------------------- *
+*  | 04/08/12: Chapter 1 Boss' projectile firing rate was slightly decreased								   		   	   | *
+*  | 04/09/12: Chapter 1 Boss' projectile particle trail effect was slightly changed						   		   	   | *
+*  | 04/09/12: Chapter 1-3 was made slightly easier															   		   	   | *				   		   	   
+*  | 04/09/12: Removed a block from 2-2 that let players bypass certain obstacles in the level				   		   	   | *
+*  | 04/09/12: Can no longer throw Fire Bombs or use the Fire Bomb secondary ability while in water			   		   	   | *
+*  | 04/10/12: Red ! Switches were added to the game, activating them destroys red cages					   		   	   | *
+*  | 04/10/12: Red Cage object added to the game															   		   	   | *
+*  | 04/11/12: A fizzle sound is no longer played when the Chapter 4 strong wind blows out flames			   		   	   | *
+*  | 04/15/12: Game now saves volume values to save file as soon as the player changes volume values in the options	   	   | *
+*  | 04/15/12: Messages are now displayed to let a player know if the sound is muted or unmuted when they click the 	   | *
+*  |			volume mute button in the Options menu																	   | *
+*  | 04/15/12: Screen shake toggle button was added to options (to toggle the Chapter 3 screen shake				 	   | *
+*  | 04/15/12: Messages are now printed to let a player know if screen shake is turned on or off when they click the	   | * 
+*  |			screen shake button in the Options menu			 	   													   | *
+*  | 04/15/12: The strong wind effect in Chapter 3 now happens more frequently											   | * 
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------------------------- B U G F I X E S ---------------------------------------------------- *                    
+*  | 04/08/12: Chapter 1-4 view was fixed																	   		   	   | *
+*  | 04/09/12: Fixed a bug that didnt allow a player to start throwing certain bombs even though they had enough BP	   	   | *
+*  | 04/09/12: Fixed a bug that caused Chapter 4 strong wind sounds to loop indefinitely							   	   | *
+*  | 04/10/12: Fixed a bug that caused the Fire Bomb and it's secondary ability to create Electric Bomb explosion masks	   | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+******************************************************************************************************************************
+*============================================================================================================================*
+*============================================================================================================================*
+*============================================================================================================================*
+******************************************************************************************************************************
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++ |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +   V  E  R  S  I  O  N :   0.20.0     + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| +								  	  + |||||||||||||||||||||||||||||||||||||||| *
+* |||||||||||||||||||||||||||||||||||||||| ++++++++++++++++++++++++++++++++++++++++	|||||||||||||||||||||||||||||||||||||||| *  
+* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| *
+******************************************************************************************************************************
+*                                                                                                                            *
+*                                                                                                                            *
+*  ----------------------------------------------- M A J O R   C H A N G E S ----------------------------------------------- * 
+*  |																					   						           | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------- F U N C T I O N A L I T Y / N E W   F E A T U R E S ---------------------------------- *
+*  |																					   						           | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+*  ---------------------------------------------------- B U G F I X E S ---------------------------------------------------- *                    
+*  |																					   						           | *
+*  ------------------------------------------------------------------------------------------------------------------------- *
+*                                                                                                                            *
+******************************************************************************************************************************
